@@ -1,0 +1,38 @@
+{% extends 'layout/base.html' %}
+
+{% block content %}
+
+
+
+<h1 class="text-center text-danger">DANG KY NGUOI DUNG</h1>
+{% if err_msg %}
+<div class = "alert alert-danger">
+    {{err_msg}}
+</div>
+{% endif %}
+<form method="post" enctype="multipart/form-data" action="/register">
+    <div class="form-floating mb-3 mt-3">
+        <input type="text" class="form-control" required id="name" placeholder="Nhap ten" name="name">
+        <label for="name">Ho Ten</label>
+    </div>
+    <div class="form-floating mb-3 mt-3">
+        <input type="text" class="form-control" required id="username" placeholder="Ten dang nhap" name="username">
+        <label for="username">Ten dang nhap</label>
+    </div>
+    <div class="form-floating mt-3 mb-3">
+        <input type="password" class="form-control" required id="password" placeholder="Nhap mat khau" name="password">
+        <label for="password">Mat Khau</label>
+    </div>
+    <div class="form-floating mt-3 mb-3">
+        <input type="password" class="form-control" required id="confirm" placeholder="Nhap xac nhan mat khau" name="confirm">
+        <label for="confirm">xac nhan mat khau</label>
+    </div>
+     <div class="form-floating mt-3 mb-3">
+        <input type="file" class="form-control" id="avatar"  name="avatar">
+        <label for="avatar">Anh dai dien</label>
+    </div>
+    <div>
+        <input type = submit value="Dang ky" class="btn btn-success">
+    </div>
+</form>
+{% endblock %}
